@@ -1,7 +1,8 @@
 def uppercase(str):
     for index in str:
         if 96 < ord(index) < 123:
-            print(chr(ord(index) - 32), end="")
+            temp = chr(ord(index) - 32)
         else:
-            print(index, end="")
+            temp = index
+        print(temp, end="")
     print("")
