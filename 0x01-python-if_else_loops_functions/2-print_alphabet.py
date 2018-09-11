@@ -1,4 +1,3 @@
 #!/usr/bin/python3
-alphabet = "abcdefghijklmnopqrstuvwxyz"
-for a in alphabet:
-    print(a, end="")
+for a in range(97, 123):
+    print("{}".format(chr(a)), end="")
