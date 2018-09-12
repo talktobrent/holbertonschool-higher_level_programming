@@ -9,5 +9,4 @@ def fizzbuzz():
             print("Fizz", end="")
         else:
             print(x, end="")
-        if x < 100:
-            print(" ", end="")
+        print(" ", end="")
