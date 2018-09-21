@@ -5,13 +5,19 @@ def roman_to_int(roman_string):
         rdic = {'I': 1, 'V': 5, 'X': 10, 'L': 50,
                 'C': 100, 'D': 500, 'M': 1000}
         number = 0
-        for index, char in enumerate(roman_string):
-            for r, n in rdic.items():
-                if char == r:
-                    if char == 'I' and index != len(roman_string) - 1:
-                        if roman_string[index + 1] in ('X', 'V'):
-                            number -= 2
-                        else:
-                            pass
+        index = 0
+        while index < len(roman_string):
+            nextchar = None
+            if roman_string[index] in rdic:
+                n = rdic[roman_string[index]]
+            if index < len(roman_string) - 1:
+                nextchar = roman_string[index + 1]
+                if rdic[nextchar] > n:
+                    number += rdic[nextchar] - n
+                    index += 1
+                else:
                     number += n
+            else:
+                number += n
+            index += 1
     return (number)
