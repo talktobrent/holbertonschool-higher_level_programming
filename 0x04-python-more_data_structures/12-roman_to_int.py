@@ -10,6 +10,8 @@ def roman_to_int(roman_string):
             nextchar = None
             if roman_string[index] in rdic:
                 n = rdic[roman_string[index]]
+            else:
+                return (0)
             if index < len(roman_string) - 1:
                 nextchar = roman_string[index + 1]
                 if rdic[nextchar] > n:
