@@ -15,7 +15,7 @@ def roman_to_int(roman_string):
             if index < len(roman_string) - 1:
                 nextchar = roman_string[index + 1]
                 if rdic[nextchar] > n:
-                    if n in (5, 50, 500):
+                    if (rdic[nextchar] / n) not in (5, 10):
                         return (0)
                     number += rdic[nextchar] - n
                     index += 1
