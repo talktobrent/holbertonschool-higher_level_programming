@@ -29,7 +29,6 @@ class Square:
         else:
             self.__position = value
 
-    @property
     def area(self):
         """ gets current area of square """
         return self.__size * self.__size
