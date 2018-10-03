@@ -4,6 +4,8 @@ class Square:
 
     Attributes:
         __size (int): Size of square
+        __position (int, int): Position offset to print, [0] horizontal, [1]
+             vertical
     """
     def __init__(self, size=0, position=(0, 0)):
         self.size = size
@@ -11,6 +13,7 @@ class Square:
 
     @property
     def position(self):
+        """ current position setting """
         return self.__position
 
     @position.setter
@@ -26,10 +29,13 @@ class Square:
         else:
             self.__position = value
 
+    @property
     def area(self):
+        """ gets current area of square """
         return self.__size * self.__size
 
     def my_print(self):
+        """ prints a square """
         if self.__size == 0:
             print()
         else:
@@ -44,6 +50,7 @@ class Square:
 
     @property
     def size(self):
+        """ size of square """
         return self.__size
 
     @size.setter
