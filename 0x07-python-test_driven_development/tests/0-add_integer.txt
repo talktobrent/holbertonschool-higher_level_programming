@@ -1,0 +1,31 @@
+* add_integer test module *
+___________________________
+
+>>> add_integer = __import__('0-add_integer').add_integer
+
+>>> add_integer(0)
+98
+
+>>> add_integer(0, 0)
+0
+
+>>> add_integer()
+
+>>> add_integer("string", 6)
+>>> add_integer(6, "string")
+>>> add_integer("string")
+
+>>> add_integer(9999999999999999, 9999999999999999)
+>>> add_integer(9999999999999999)
+
+>>> add_integer(99.9, 99)
+>>> add_integer(99.9, 99.9)
+>>> add_integer(99.9)
+
+>>> add_integer(c)
+>>> add_integer(c, c)
+
+>>> add_integer((99,99))
+>>> add_integer([99,99])
+>>> add_integer((99,99),(99,99))
+>>> add_integer([99,99],[99,99])
