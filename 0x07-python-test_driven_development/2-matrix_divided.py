@@ -20,23 +20,23 @@ def matrix_divided(matrix, div):
 
     """
     if type(matrix) is not list or len(matrix) == 0:
-        raise TypeError("matrix must be a matrix (list of lists) \
-                        of integers/floats")
+        raise TypeError("matrix must be a matrix (list of lists) "
+                        "of integers/floats")
 
     for index, x in enumerate(matrix):
         if type(x) is not list or len(x) == 0:
-            raise TypeError("matrix must be a matrix (list of lists) \
-                            of integers/floats")
+            raise TypeError("matrix must be a matrix (list of lists) "
+                            "of integers/floats")
         if index > 0:
             newlen = len(x)
             if newlen != lastlen:
-                raise TypeError("Each row of the matrix must \
-                                have the same size")
+                raise TypeError("Each row of the matrix must have the same "
+                                "size")
         lastlen = len(x)
         for y in x:
             if type(y) not in (float, int):
-                raise TypeError("matrix must be a matrix (list of lists) \
-                                of integers/floats")
+                raise TypeError("matrix must be a matrix (list of lists) of "
+                                "integers/floats")
 
     if type(div) not in (float, int):
         raise TypeError("div must be a number")

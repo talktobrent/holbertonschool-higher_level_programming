@@ -99,3 +99,7 @@ Traceback (most recent call last):
 TypeError: div must be a number
 
 
+>>> matrix = [[10]]
+
+>>> matrix_divided(matrix, 3)
+[[3.33]]
