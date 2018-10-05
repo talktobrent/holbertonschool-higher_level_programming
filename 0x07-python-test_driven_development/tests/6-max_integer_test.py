@@ -8,7 +8,11 @@ max_integer = __import__('6-max_integer').max_integer
 class TestMaxInteger(unittest.TestCase):
     """ tests max_integer function
     """
+
     def test_max_integer(self):
+	""" max_integer argument tests
+	"""
+
         result = max_integer([1, 2, 3])
         self.assertEqual(result, 3)
 
