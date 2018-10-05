@@ -21,7 +21,7 @@ def text_indentation(text):
         if text[count] in ['.', '?', ':']:
             print("\n")
             for x in text[count + 1:]:
-                if x not in [' ', '\t']:
+                if x.isspace() is False:
                     break
                 else:
                     count += 1
