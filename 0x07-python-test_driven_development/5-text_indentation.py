@@ -1,4 +1,7 @@
 #!/usr/bin/python3
+""" Text indentation module
+"""
+
 def text_indentation(text):
     """ indents a text string
 
