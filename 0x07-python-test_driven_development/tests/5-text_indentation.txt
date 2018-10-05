@@ -35,6 +35,9 @@ test
 >>> text_indentation("test   ")
 test   
 
+>>> text_indentation("test   test")
+test   test
+
 
 >>> text_indentation("")
 
