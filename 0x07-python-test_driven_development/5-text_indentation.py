@@ -2,6 +2,7 @@
 """ Text indentation module
 """
 
+
 def text_indentation(text):
     """ indents a text string
 

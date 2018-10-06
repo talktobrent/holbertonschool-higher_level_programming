@@ -2,6 +2,7 @@
 """ Matrix divided module
 """
 
+
 def matrix_divided(matrix, div):
     """ Divides all elements of a matrix
 

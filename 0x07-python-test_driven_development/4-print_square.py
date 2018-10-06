@@ -2,6 +2,7 @@
 """ Prints square module
 """
 
+
 def print_square(size):
     """ Prints a square
 
