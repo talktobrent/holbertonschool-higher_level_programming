@@ -9,6 +9,16 @@ ___________________________
 >>> add_integer(3, 3)
 6
 
+>>> add_integer(3.3, 3.3)
+6
+
+>>> add_integer(3.3)
+101
+
+
+>>> add_integer(3, 3.3)
+6
+
 >>> add_integer(-3, 3)
 0
 
@@ -46,5 +56,3 @@ TypeError: a must be integer
 Traceback (most recent call last):
     ...
 TypeError: a must be integer
-
-
