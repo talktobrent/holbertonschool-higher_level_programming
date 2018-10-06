@@ -19,14 +19,11 @@ def text_indentation(text):
     if type(text) is not str:
         raise TypeError("text must be a string")
 
-    count = 0
-    while count < len(text):
-        print("{:s}".format(text[count]), end="")
-        if text[count] in ['.', '?', ':']:
-            print("\n")
-            for x in text[count + 1:]:
-                if x.isspace() is False:
-                    break
-                else:
-                    count += 1
-        count += 1
+    back = 0
+    for index, x in enumerate(text):
+        if x in ['.', ':', '?']:
+            print("{:s}\n".format(text[back:index + 1].lstrip()))
+            back = index + 1
+            continue
+        if index == len(text) - 1:
+            print("{:s}".format(text[back:].lstrip()), end="")

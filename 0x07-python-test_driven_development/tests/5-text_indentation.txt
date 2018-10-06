@@ -12,6 +12,11 @@ test.
 test?
 <BLANKLINE>
 
+>>> text_indentation(": .")
+:
+<BLANKLINE>
+.
+<BLANKLINE>
 
 >>> text_indentation("test:")
 test:
@@ -27,7 +32,7 @@ test
 test
 
 >>> text_indentation("   .test")
-   .
+.
 <BLANKLINE>
 test
 
@@ -61,7 +66,6 @@ test
 <BLANKLINE>
 
 >>> text_indentation("  ")
-<BLANKLINE>  
  
 
 >>> text_indentation(":   ")
@@ -75,7 +79,7 @@ test:
 <BLANKLINE>
 
 >>> text_indentation("   .test:   ")
-   .
+.
 <BLANKLINE>
 test:
 <BLANKLINE>
