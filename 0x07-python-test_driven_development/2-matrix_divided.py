@@ -23,23 +23,22 @@ def matrix_divided(matrix, div):
         ZeroDivisionError: division by zero
 
     """
+    TE = "matrix must be a matrix (list of lists) of integers/floats"
+    SIZE = "Each row of the matrix must have the same size"
+
     if type(matrix) is not list or len(matrix) == 0:
-        raise TypeError("matrix must be a matrix (list of lists) "
-                        "of integers/floats")
+        raise TypeError(TE)
 
     for index, lyst in enumerate(matrix):
         if type(lyst) is not list or len(lyst) == 0:
-            raise TypeError("matrix must be a matrix (list of lists) "
-                            "of integers/floats")
+            raise TypeError(TE)
 
         if len(lyst) != len(matrix[index - 1]):
-            raise TypeError("Each row of the matrix must have the same "
-                            "size")
+            raise TypeError(SIZE)
 
         for item in lyst:
             if type(item) not in (int, float):
-                raise TypeError("matrix must be a matrix (list of lists) of "
-                                "integers/floats")
+                raise TypeError(TE)
 
     if type(div) not in (float, int):
         raise TypeError("div must be a number")
