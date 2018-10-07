@@ -127,3 +127,8 @@ TypeError: div must be a number
 
 >>> matrix_divided(matrix, 10)
 [[1.0]]
+
+>>> matrix = [[1, 2]]
+>>> matrix_divided(matrix, 1)
+[[1.0, 2.0]]
+

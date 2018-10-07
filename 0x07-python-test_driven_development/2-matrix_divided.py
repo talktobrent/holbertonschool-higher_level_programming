@@ -27,18 +27,17 @@ def matrix_divided(matrix, div):
         raise TypeError("matrix must be a matrix (list of lists) "
                         "of integers/floats")
 
-    for index, x in enumerate(matrix):
-        if type(x) is not list or len(x) == 0:
+    for index, lyst in enumerate(matrix):
+        if type(lyst) is not list or len(lyst) == 0:
             raise TypeError("matrix must be a matrix (list of lists) "
                             "of integers/floats")
-        if index > 0:
-            newlen = len(x)
-            if newlen != lastlen:
-                raise TypeError("Each row of the matrix must have the same "
-                                "size")
-        lastlen = len(x)
-        for y in x:
-            if type(y) not in (float, int):
+
+        if len(lyst) != len(matrix[index - 1]):
+            raise TypeError("Each row of the matrix must have the same "
+                            "size")
+
+        for item in lyst:
+            if type(item) not in (int, float):
                 raise TypeError("matrix must be a matrix (list of lists) of "
                                 "integers/floats")
 
