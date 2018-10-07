@@ -19,11 +19,9 @@ def text_indentation(text):
     if type(text) is not str:
         raise TypeError("text must be a string")
 
-    back = 0
     for index, x in enumerate(text):
         if x in ['.', ':', '?']:
-            print("{:s}\n".format(text[back:index + 1].lstrip()))
-            back = index + 1
-            continue
-        if index == len(text) - 1:
-            print("{:s}".format(text[back:].lstrip()), end="")
+            print("{:s}\n".format(text[:index + 1].lstrip()))
+            text_indentation(text[index + 1:])
+            return
+    print("{:s}".format(text.lstrip()), end="")
