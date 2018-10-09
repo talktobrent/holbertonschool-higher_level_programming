@@ -67,14 +67,10 @@ class Rectangle:
         return rect_2
 
     def __str__(self):
-        """ prints square in string form
+        """ puts square in string form
         """
-        string = ""
-        for x in range(self.height):
-            string += "{}".format(self.print_symbol) * self.width
-            if x != self.height - 1:
-                string += '\n'
-        return string
+        return "\n".join([str(self.print_symbol * self.width) for
+                         x in range(self.height)])
 
     def __repr__(self):
         """ represents a rectangle declaration in string form
