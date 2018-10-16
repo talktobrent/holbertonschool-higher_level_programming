@@ -25,7 +25,7 @@ class BaseGeometry:
             TypeError: "<name> must be an integer"
             ValueError: "<name> must be greater than 0"
         """
-        if type(value) not in (int, float):
+        if type(value) != int or value != value:
             raise TypeError("{:s} must be an integer".format(name))
         if value <= 0:
             raise ValueError("{:s} must be greater than 0".format(name))
@@ -47,8 +47,10 @@ class Rectangle(BaseGeometry):
             height (int): height given
         """
 
-        self.__width = self.integer_validator("width", width)
-        self.__height = self.integer_validator("height", height)
+        self.integer_validator("width", width)
+        self.integer_validator("height", height)
+        self.__width = width
+        self.__height = height
 
     def __str__(self):
         return "[Rectangle] {:d}/{:d}".format(self.__width, self.__height)
