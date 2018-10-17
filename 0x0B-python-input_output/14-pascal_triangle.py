@@ -8,9 +8,6 @@ def pascal_triangle(n):
     Returns:
         matrix of pascal triangle
     """
-    if type(n) is not int or n <= 0:
-        return None
-
     last = []
     new = []
     matrix = []
