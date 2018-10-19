@@ -33,6 +33,9 @@ class Rectangle(Base):
         if name in ("x", "y") and value < 0:
             raise ValueError("{:s} must be >= 0".format(name))
 
+    def area(self):
+        return self.width * self.height
+
     @property
     def width(self):
         return self.__width
