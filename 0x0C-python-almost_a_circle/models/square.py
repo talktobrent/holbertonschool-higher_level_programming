@@ -37,32 +37,32 @@ class Square(Rectangle):
 
     @property
     def width(self):
-        raise Exception("no attribute: width in Square")
+        raise AttributeError("no attribute: width in Square")
 
     @property
     def height(self):
-        raise Exception("no attribute: height in Square")
+        raise AttributeError("no attribute: height in Square")
 
     @width.setter
     def width(self, width):
-        raise Exception("no method: width in Square")
+        raise AttributeError("no method: width in Square")
 
     @height.setter
     def height(self, height):
-        raise Exception("no method: height in Square")
+        raise AttributeError("no method: height in Square")
 
     def update(self, *args, **kwargs):
         """ square updater formats args and kwargs for rectangle update
         """
         fix = args
         if args and len(args) > 1:
-            self.validate("size", args[1])
+            if args[1] is not None:
+                self.validate("size", args[1])
             fix = list(args)
             fix.insert(1, fix[1])
             fix = tuple(fix)
-        if kwargs:
-            if "size" in kwargs:
-                self.size = kwargs.pop("size")
+        if kwargs and "size" in kwargs:
+            self.size = kwargs.pop("size")
         super().update(*fix, **kwargs)
 
     def to_dictionary(self):

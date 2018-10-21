@@ -18,8 +18,14 @@ class Rectangle(Base):
         """
         Rectangle.width.fset(self, width)
         Rectangle.height.fset(self, height)
-        self.x = x
-        self.y = y
+        if not x:
+            self.x = 0
+        else:
+            self.x = x
+        if not y:
+            self.y = 0
+        else:
+            self.y = y
         super().__init__(id)
 
     def validate(self, name, value):
@@ -60,16 +66,19 @@ class Rectangle(Base):
         """
         func = ["id", "width", "height", "x", "y"]
         if args and len(args) > 0:
-            self.id = args[0]
+            if args[0] is not None:
+                self.id = args[0]
             for f, arg in zip(func[1:], args[1:]):
-                exec("Rectangle.{:s}.fset(self, arg)".format(f))
+                if arg is not None:
+                    exec("Rectangle.{:s}.fset(self, arg)".format(f))
         if kwargs and len(kwargs) > 0:
             for key in kwargs:
                 if key in func:
-                    exec("self.{:s} = {}".format(key, kwargs[key]))
+                    if kwargs[key] is not None:
+                        exec("self.{:s} = {}".format(key, kwargs[key]))
                 else:
-                    raise Exception("no method: {:s} in {:s}".format(
-                        key, type(self).__name___))
+                    raise AttributeError("no method: {:s} in {:s}".format(
+                        key, type(self).__name__))
 
     def to_dictionary(self):
         """ dictionary output
