@@ -25,15 +25,15 @@ class Square(Rectangle):
 
     @property
     def size(self):
-        return self.__width
+        return Rectangle.width.fget(self)
 
     @size.setter
     def size(self, size):
         """ sets both width and height to "size"
         """
         self.validate("size", size)
-        self.__width = size
-        self.__height = size
+        Rectangle.width.fset(self, size)
+        Rectangle.height.fset(self, size)
 
     @property
     def width(self):
@@ -62,12 +62,12 @@ class Square(Rectangle):
             fix.insert(1, fix[1])
             fix = tuple(fix)
         if kwargs:
-            if "size" in kwargs:
-                self.size = kwargs.pop("size")
             if "width" in kwargs:
                 self.width = 1
             if "height" in kwargs:
                 self.height = 1
+            if "size" in kwargs:
+                self.size = kwargs.pop("size")
         super().update(*fix, **kwargs)
 
     def to_dictionary(self):
