@@ -12,29 +12,70 @@ class Rectangle(Base):
         __height (int):
         __x (x):
         __y (y):
-
-
     """
     def __init__(self, width, height, x=0, y=0, id=None):
-        """ initializer """
-
-        self.width = width
-        self.height = height
+        """ initializer
+        """
+        Rectangle.width.fset(self, width)
+        Rectangle.height.fset(self, height)
         self.x = x
         self.y = y
         super().__init__(id)
 
     def validate(self, name, value):
-        """ value validator """
+        """ value validator
+        """
         if type(value) is not int:
             raise TypeError("{:s} must be an integer".format(name))
-        if name in ("width", "height") and value < 1:
+        if name in ("width", "height", "size") and value < 1:
             raise ValueError("{:s} must be > 0".format(name))
         if name in ("x", "y") and value < 0:
             raise ValueError("{:s} must be >= 0".format(name))
 
     def area(self):
-        return self.width * self.height
+        """ gets area
+        """
+        return Rectangle.width.fget(self) * Rectangle.height.fget(self)
+
+    def display(self):
+        """ prints an instance
+        """
+        print('\n' * self.y, end="")
+        print("{1}{0}\n".format('#' * Rectangle.width.fget(self), " " *
+              self.x) * Rectangle.height.fget(self), end="")
+
+    def __str__(self):
+        """ string representation
+        """
+        return "[{}] ({}) {}/{} - {}/{}".format(
+                type(self).__name__, self.id, self.x, self.y,
+                Rectangle.width.fget(self), Rectangle.height.fget(self))
+
+    def update(self, *args, **kwargs):
+        """ updates attributes of instance
+
+        Args:
+            args (list): values in order of operation
+            kwargs (dict): dictionary with keys corresponding to attributes
+        """
+        func = ["id", "width", "height", "x", "y"]
+        if args and len(args) > 0:
+            self.id = args[0]
+            for f, arg in zip(func[1:], args[1:]):
+                exec("Rectangle.{:s}.fset(self, arg)".format(f))
+        if kwargs and len(kwargs) > 0:
+            for key in kwargs:
+                if key in func:
+                    exec("self.{:s} = {}".format(key, kwargs[key]))
+                else:
+                    raise Exception("no method: {:s} in {:s}".format(
+                        key, type(self).__name___))
+
+    def to_dictionary(self):
+        """ dictionary output
+        """
+        return {att.rsplit('_', 1)[-1]: value for att, value in
+                self.__dict__.items()}
 
     @property
     def width(self):
@@ -42,7 +83,8 @@ class Rectangle(Base):
 
     @width.setter
     def width(self, width):
-        """ sets width """
+        """ sets width
+        """
         self.validate("width", width)
         self.__width = width
 
@@ -52,7 +94,8 @@ class Rectangle(Base):
 
     @height.setter
     def height(self, height):
-        """ sets height """
+        """ sets height
+        """
         self.validate("height", height)
         self.__height = height
 
@@ -62,7 +105,8 @@ class Rectangle(Base):
 
     @x.setter
     def x(self, x):
-        """ sets x """
+        """ sets x
+        """
         self.validate("x", x)
         self.__x = x
 
@@ -72,6 +116,7 @@ class Rectangle(Base):
 
     @y.setter
     def y(self, y):
-        """ sets y """
+        """ sets y
+        """
         self.validate("y", y)
         self.__y = y
