@@ -61,8 +61,13 @@ class Square(Rectangle):
             fix = list(args)
             fix.insert(1, fix[1])
             fix = tuple(fix)
-        if kwargs and "size" in kwargs:
-            self.size = kwargs.pop("size")
+        if kwargs:
+            if "size" in kwargs:
+                self.size = kwargs.pop("size")
+            if "width" in kwargs:
+                self.width = 1
+            if "height" in kwargs:
+                self.height = 1
         super().update(*fix, **kwargs)
 
     def to_dictionary(self):
