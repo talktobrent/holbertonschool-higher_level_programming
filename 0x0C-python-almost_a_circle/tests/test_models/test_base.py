@@ -79,7 +79,7 @@ class TestBase(unittest.TestCase):
         list_output = Rectangle.from_json_string(json_list_input)
         self.assertCountEqual(list_output, list_input)
 
-    def test_dict_to_instance(self):
+    def test_create(self):
         """ tests create method
         """
         r1 = Rectangle(3, 5, 1)
@@ -87,6 +87,10 @@ class TestBase(unittest.TestCase):
         r2 = Rectangle.create(**r1_dictionary)
         self.assertEqual(str(r1), str(r2))
 
+    def test_create_incorrect_class(self):
+        """ tests with dict of wrong class
+        """
+        r1 = Rectangle(3, 5, 1)
+        r1_dictionary = r1.to_dictionary()
         with self.assertRaises(AttributeError):
-
             Square.create(**r1_dictionary)
