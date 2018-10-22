@@ -13,7 +13,6 @@ class Square(Rectangle):
         """ square initializer, sends "size" to "height"
         and "width" in rectangle
         """
-        self.validate("size", size)
         super().__init__(size, size, x, y, id)
 
     def __str__(self):
@@ -30,7 +29,6 @@ class Square(Rectangle):
     def size(self, size):
         """ sets both width and height to "size"
         """
-        self.validate("size", size)
         Rectangle.width.fset(self, size)
         Rectangle.height.fset(self, size)
 
