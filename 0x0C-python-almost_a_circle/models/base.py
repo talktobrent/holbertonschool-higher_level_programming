@@ -33,10 +33,9 @@ class Base:
         """
         if list_dictionaries:
             if not all(type(x) is dict for x in list_dictionaries):
-                raise Exception
+                raise TypeError("list must contain only dictionaries")
             return json.dumps(list_dictionaries)
-        else:
-            return json.dumps([])
+        return json.dumps([])
 
     @classmethod
     def save_to_file(cls, list_objs):
@@ -45,35 +44,44 @@ class Base:
         jlist = []
         if list_objs and len(list_objs) > 0:
             if not all(type(x) is cls for x in list_objs):
-                raise Exception
+                raise TypeError("all objects in list must be {:s}".format(
+                                cls.__name__))
             jlist = [x.to_dictionary() for x in list_objs]
         with open("{:s}.json".format(cls.__name__), "w") as afile:
-            json.dump(jlist, afile)
+            afile.write(cls.to_json_string(jlist))
 
     @staticmethod
     def from_json_string(json_string):
         """ JSON string to list
         """
         if json_string:
-            return json.loads(json_string)
-        else:
-            return []
+            if type(json_string) is str:
+                return json.loads(json_string)
+            else:
+                raise TypeError("from_json_string requires string")
+        return []
 
     @classmethod
     def create(cls, **dictionary):
         """ build instance from dictionary
         """
         if cls.__name__ is "Square":
-            new = cls(1)
+            args = tuple(dictionary.pop(x, None) for x in ["size", "x", "y", "id"])
         else:
-            new = cls(1, 1)
-        new.update(**dictionary)
-        return new
+            args = tuple(dictionary.pop(x, None) for x in ["width", "height", "x", "y", "id"])
+        if not dictionary:
+            test = object.__new__(cls)
+            test.__init__(*args)
+        if dictionary:
+            raise AttributeError("no method: {:s} in {:s}".format(
+                next(iter(dictionary)), cls.__name__))
+        test.update(**dictionary)
+        return test
 
     @classmethod
     def load_from_file(cls):
         """ creates class instances from JSON file
         """
         with open("{:s}.json".format(cls.__name__), "r") as f:
-            jlist = json.load(f)
-        return [cls.create(**x) for x in jlist]
+            jlist = cls.from_json_string(f.read())
+            return [cls.create(**x) for x in jlist]

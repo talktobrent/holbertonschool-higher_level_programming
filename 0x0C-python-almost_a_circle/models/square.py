@@ -76,4 +76,5 @@ class Square(Rectangle):
         sqd = super().to_dictionary()
         del sqd["width"]
         del sqd["height"]
+        sqd.update({"size": self.size})
         return sqd
