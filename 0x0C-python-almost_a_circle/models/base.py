@@ -100,6 +100,10 @@ class Base:
         Args:
             cls (object): class object to make
         """
-        with open("{:s}.json".format(cls.__name__), "r") as f:
-            jlist = cls.from_json_string(f.read())
+        try:
+            with open("{:s}.json".format(cls.__name__), "r") as f:
+                jlist = cls.from_json_string(f.read())
             return [cls.create(**x) for x in jlist]
+        except IOError:
+            print("{:s} cannot be found".format(cls.__name__), file=stderr)
+            return []
