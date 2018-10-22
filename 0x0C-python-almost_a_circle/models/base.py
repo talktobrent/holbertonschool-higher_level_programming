@@ -11,7 +11,7 @@ class Base:
 
     Attributes:
         __nb_objects (int): class total instance count
-        id
+        id (object): id of object
 
     Raises:
 
@@ -20,6 +20,9 @@ class Base:
 
     def __init__(self, id=None):
         """ initializer
+
+        Args:
+            id (object)
         """
         if id is not None:
             self.id = id
@@ -30,6 +33,9 @@ class Base:
     @staticmethod
     def to_json_string(list_dictionaries):
         """ JSON string
+
+        Args:
+            list_dictionaries (list): list of dicts
         """
         if list_dictionaries:
             if not all(type(x) is dict for x in list_dictionaries):
@@ -40,6 +46,9 @@ class Base:
     @classmethod
     def save_to_file(cls, list_objs):
         """ JSON string to file
+
+        Args:
+            list_objs (list): list of objects
         """
         jlist = []
         if list_objs and len(list_objs) > 0:
@@ -53,6 +62,9 @@ class Base:
     @staticmethod
     def from_json_string(json_string):
         """ JSON string to list
+
+        Args:
+            json_string (str)
         """
         if json_string:
             if type(json_string) is str:
@@ -64,15 +76,20 @@ class Base:
     @classmethod
     def create(cls, **dictionary):
         """ build instance from dictionary
+
+        Args:
+            dictionary (dict)
         """
         if cls.__name__ is "Square":
-            args = tuple(dictionary.pop(x, None) for x in ["size", "x", "y", "id"])
+            args = tuple(dictionary.pop(x, None) for x in [
+                "size", "x", "y", "id"])
         else:
-            args = tuple(dictionary.pop(x, None) for x in ["width", "height", "x", "y", "id"])
+            args = tuple(dictionary.pop(x, None) for x in [
+                "width", "height", "x", "y", "id"])
         if not dictionary:
             test = object.__new__(cls)
             test.__init__(*args)
-        if dictionary:
+        else:
             raise AttributeError("no method: {:s} in {:s}".format(
                 next(iter(dictionary)), cls.__name__))
         test.update(**dictionary)
@@ -81,6 +98,9 @@ class Base:
     @classmethod
     def load_from_file(cls):
         """ creates class instances from JSON file
+
+        Args:
+            cls (object): class object to make
         """
         with open("{:s}.json".format(cls.__name__), "r") as f:
             jlist = cls.from_json_string(f.read())
