@@ -103,6 +103,9 @@ class Base:
         try:
             with open("{:s}.json".format(cls.__name__), "r") as f:
                 jlist = cls.from_json_string(f.read())
+            if not all([type(x) is cls for x in jlist]):
+                raise TypeError("all objects in list be type: {:s}".format(
+                                cls.__name__))
             return [cls.create(**x) for x in jlist]
         except IOError:
             return []
