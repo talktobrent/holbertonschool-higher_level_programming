@@ -38,6 +38,8 @@ class TestRectangle(unittest.TestCase):
             Rectangle(9.9, 1)
             Rectangle(None, 1)
             Rectangle(True, 1)
+            Rectangle(9.9, 1)
+            Rectangle(float("nan"), 1)
 
         with self.assertRaises(ValueError):
             Rectangle(0, 1)
