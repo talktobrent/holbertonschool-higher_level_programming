@@ -94,3 +94,15 @@ class TestBase(unittest.TestCase):
         r1_dictionary = r1.to_dictionary()
         with self.assertRaises(AttributeError):
             Square.create(**r1_dictionary)
+
+    def test_load_from_file(self):
+        """ test load from file
+        """
+        r1 = Rectangle(10, 7, 2, 8)
+        r2 = Rectangle(2, 4)
+        list_rectangles_input = [r1, r2]
+
+        Rectangle.save_to_file(list_rectangles_input)
+        list_rectangles_output = Rectangle.load_from_file()
+        self.assertCountEqual([str(x) for x in list_rectangles_input],
+                              [str(x) for x in list_rectangles_output])
