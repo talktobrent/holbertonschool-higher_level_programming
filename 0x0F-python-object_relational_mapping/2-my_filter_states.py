@@ -15,9 +15,10 @@ if __name__ == "__main__":
                                db=argv[3])
 
     cursor = database.cursor()
-    cursor.execute("SELECT * FROM states WHERE name = '{}'".format(argv[4]))
+    cursor.execute("""SELECT * FROM states WHERE name = '{}'
+                   ORDER BY id ASC""".format(argv[4]))
     rows = cursor.fetchall()
     for x in rows:
-        print (x)
+        print(x)
     cursor.close()
     database.close()

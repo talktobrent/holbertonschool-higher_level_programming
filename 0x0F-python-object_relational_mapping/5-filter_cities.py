@@ -24,6 +24,6 @@ if __name__ == "__main__":
     mylist = []
     for x in rows:
         mylist.append(x[0])
-    print (", ".join(mylist))
+    print(", ".join(mylist))
     cursor.close()
     database.close()

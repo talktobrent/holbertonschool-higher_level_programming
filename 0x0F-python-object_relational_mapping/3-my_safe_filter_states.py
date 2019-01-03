@@ -19,6 +19,6 @@ if __name__ == "__main__":
                    ORDER BY states.id""", (argv[4],))
     rows = cursor.fetchall()
     for x in rows:
-        print (x)
+        print(x)
     cursor.close()
     database.close()
