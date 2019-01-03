@@ -1,6 +1,6 @@
 #!/usr/bin/python3
 
-""" lists all states from given database """
+""" lists all states beginning with capital N """
 
 
 from sys import argv
@@ -15,11 +15,7 @@ if __name__ == "__main__":
                                db=argv[3])
 
     cursor = database.cursor()
-    cursor.execute("""SELECT cities.id, cities.name, states.name
-                      FROM states
-                      INNER JOIN cities
-                      ON cities.state_id = states.id
-                      ORDER BY cities.id""")
+    cursor.execute("SELECT * FROM states WHERE name LIKE 'N%'")
     rows = cursor.fetchall()
     for x in rows:
         print (x)
