@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-""" fetch a website and print status code if an error, else print text """
+""" fetch a website and print a user id and name, or error """
 
 import requests
 from sys import argv
