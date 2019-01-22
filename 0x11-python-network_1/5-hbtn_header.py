@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-""" fetch a website """
+""" fetch a website header key """
 
 import requests
 from sys import argv
