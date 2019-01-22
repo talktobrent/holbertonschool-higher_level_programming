@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-""" fetch a website header """
+""" try to read a webpage, or show error code """
 
 from urllib import request
 from urllib.error import HTTPError
