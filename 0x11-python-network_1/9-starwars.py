@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-""" fetch a website and print status code if an error, else print text """
+""" get starwars characters """
 
 import requests
 from sys import argv
