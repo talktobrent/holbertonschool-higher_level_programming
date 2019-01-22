@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-""" fetch a website header """
+""" POST an email address """
 
 from urllib import parse, request
 from sys import argv
