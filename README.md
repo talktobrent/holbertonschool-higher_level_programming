@@ -1,17 +1,6 @@
-# Higher-level programming
-- 0x00-python-hello_world
-- 0x01-python-if_else_loops_functions
-- 0x02-python-import_modules
-- 0x03-python-data_structures
-- 0x04-python-more_data_structures
-- 0x05-python-exceptions
-- 0x06-python-classes
-- 0x07-python-test_driven_development
-- 0x08-python-more_classes
-- 0x09-python-everything_is_object
-- 0x0A-python-inheritance
-- 0x0B-python-input_output
-- 0x0C-python-almost_a_circle
-- 0x0D-SQL_introduction
-- 0x0E-SQL_more_queries
-- 0x0F-python-object_relational_mapping
+# Higher Level Programming -- Holberton School 2018-2019
+### A collection of projects introducing various higher level programming skills, tools, and concepts
+- Concepts and themes are highlighted in directory names, and reflect a chronological progression
+- Each project follows instructions, main files, and structs given on the Holberton intranet site
+- Each project is designed to demonstrate a particular skill or tool in higher level programming
+- The curriculum was done over a 9 month period, and commits should reflect a progression in knowledge and skills
