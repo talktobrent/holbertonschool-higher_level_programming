@@ -1,4 +1,5 @@
 # Higher Level Programming -- Holberton School 2018-2019
+## Python, SQL
 ### A collection of projects introducing various higher level programming skills, tools, and concepts
 - Concepts and themes are highlighted in directory names, and reflect a chronological progression
 - Each project follows instructions, main files, and supporting data and conditions given on the Holberton intranet site
