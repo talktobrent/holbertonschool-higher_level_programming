@@ -1,13 +1,12 @@
 #!/usr/bin/node
-let last = 0;
-let high = Number(process.argv[2]);
-for (let x = 2; x < process.argv.length; x++) {
-  if (Number(process.argv[x]) > high) {
-    last = high;
-    high = Number(process.argv[x]);
-  }
-  if (Number(process.argv[x]) > last && Number(process.argv[x]) < high) {
-    last = Number(process.argv[x]);
+let low = 0;
+let high = 0;
+for (let x of process.argv.splice(2)) {
+  if (Number(x) > high) {
+    low = high;
+    high = Number(x);
+  } else if (Number(x) > low && Number(x) < high) {
+    low = Number(x);
   }
 }
-console.log(last.toString());
+console.log(low);
