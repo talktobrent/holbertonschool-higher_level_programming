@@ -4,7 +4,6 @@
 <h3>General</h3>
 
 <ul>
-<li>Why Python programming is awesome (don’t forget to tweet today, with the hashtag #pythoniscool :))</li>
 <li>What are lists and how to use them</li>
 <li>What are the differences and similarities between strings and lists</li>
 <li>What are the most common methods of lists and how to use them</li>

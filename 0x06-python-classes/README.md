@@ -4,7 +4,6 @@
 <h3>General</h3>
 
 <ul>
-<li>Why Python programming is awesome (don’t forget to tweet today, with the hashtag #pythoniscool :))</li>
 <li>What is OOP</li>
 <li>&ldquo;first-class everything&rdquo;</li>
 <li>What is a class</li>
@@ -252,6 +251,5 @@ Also, adding type/value validation in the setter will centralize the logic, you 
   </h3>
   <p>Write the Python class <code>MagicClass</code> that does exactly the same as the following Python bytecode:</p>
 <ul>
-<li>Tip: Python bytecode</li>
 </ul>
         <p>File: <code>103-magic_class.py</code></p>

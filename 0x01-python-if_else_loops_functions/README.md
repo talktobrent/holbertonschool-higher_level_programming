@@ -4,7 +4,6 @@
 <h3>General</h3>
 
 <ul>
-<li>Why Python programming is awesome (don’t forget to tweet today, with the hashtag #pythoniscool :))</li>
 <li>Why indentation is so important in Python</li>
 <li>How to use the <code>if</code>, <code>if ... else</code> statements</li>
 <li>How to use comments</li>

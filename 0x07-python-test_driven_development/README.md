@@ -4,7 +4,6 @@
 <h3>General</h3>
 
 <ul>
-<li>Why Python programming is awesome (don’t forget to tweet today, with the hashtag #pythoniscool :))</li>
 <li>What&rsquo;s an interactive test</li>
 <li>Why tests are important</li>
 <li>How to write Docstrings to create tests</li>

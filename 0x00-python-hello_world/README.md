@@ -4,7 +4,6 @@
 <h3>General</h3>
 
 <ul>
-<li>Why Python programming is awesome (don’t forget to tweet today, with the hashtag #pythoniscool :))</li>
 <li>Who created Python</li>
 <li>Who is Guido van Rossum</li>
 <li>Where does the name &lsquo;Python&rsquo; come from</li>

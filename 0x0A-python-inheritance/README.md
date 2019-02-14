@@ -4,7 +4,6 @@
 <h3>General</h3>
 
 <ul>
-<li>Why Python programming is awesome (don’t forget to tweet today, with the hashtag #pythoniscool :))</li>
 <li>What is a superclass, baseclass or parentclass</li>
 <li>What is a subclass</li>
 <li>How to list all attributes and methods of a class or instance</li>

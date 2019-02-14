@@ -4,7 +4,6 @@
 <h3>General</h3>
 
 <ul>
-<li>Why Javascript programming is amazing (don’t forget to tweet today, with the hashtag #javascriptisamazing :))</li>
 <li>How to run a Javascript script</li>
 <li>How to create variables and constants</li>
 <li>What are differences between <code>var</code>, <code>const</code> and <code>let</code></li>

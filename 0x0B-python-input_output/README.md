@@ -4,7 +4,6 @@
 <h3>General</h3>
 
 <ul>
-<li>Why Python programming is awesome (don’t forget to tweet today, with the hashtag #pythoniscool :))</li>
 <li>How to open a file</li>
 <li>How to write text in a file</li>
 <li>How to read the full content of a file </li>

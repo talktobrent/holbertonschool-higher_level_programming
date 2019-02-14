@@ -4,7 +4,6 @@
 <h3>General</h3>
 
 <ul>
-<li>Why Python programming is awesome (don’t forget to tweet today, with the hashtag #pythoniscool :))</li>
 <li>What&rsquo;s the difference between errors and exceptions</li>
 <li>What are exceptions and how to use them</li>
 <li>When do we need to use exceptions</li>
@@ -153,7 +152,6 @@
   </h3>
   <p>Write the Python function <code>def magic_calculation(a, b):</code> that does exactly the same as the following Python bytecode:</p>
 <ul>
-<li>Tip: Python bytecode</li>
 </ul>
         <p>File: <code>102-magic_calculation.py</code></p>
   <h3>

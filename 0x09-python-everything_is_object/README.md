@@ -4,7 +4,6 @@
 <h3>General</h3>
 
 <ul>
-<li>Why Python programming is awesome (don’t forget to tweet today, with the hashtag #pythoniscool :))</li>
 <li>What is an object</li>
 <li>What is the difference between a class and an object or instance</li>
 <li>What is the difference between immutable object and mutable object</li>
@@ -193,8 +192,6 @@ Answer with <code>Yes</code> or <code>No</code>.</p>
 <p><em>If you worked on advanced tasks, please also include what you did learn in those tasks in the blog post.</em></p>
 <p>Your posts should have many code/output examples to illustrate what you are explaining, and at least one picture, at the top.
 Publish your blog post on Medium or LinkedIn, and share it at least on Twitter and LinkedIn.</p>
-<p>When done, please add all urls below (blog post, tweet, etc.)</p>
-<p>Please, remember that these blogs must be written in English to further your technical ability in a variety of settings.</p>
   <h3>
     30. Clear strings
   </h3>
