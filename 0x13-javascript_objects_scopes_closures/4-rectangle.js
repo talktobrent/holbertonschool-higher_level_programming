@@ -13,7 +13,10 @@ module.exports = class Rectangle {
     [this.height, this.width] = [this.width, this.height];
   }
   double () {
-    this.width *= 2;
-    this.height *= 2;
+    try {
+      this.width *= 2;
+      this.height *= 2;
+    } catch (err) {
+    }
   }
 };
