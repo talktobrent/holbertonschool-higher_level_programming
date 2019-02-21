@@ -4,7 +4,6 @@
 <h3>General</h3>
 
 <ul>
-<li>Why jQuery make front-end programming so easy (don’t forget to tweet today, with the hashtag #ilovejquery :))</li>
 <li>How to select HTML elements in Javascript</li>
 <li>How to select HTML elements with jQuery</li>
 <li>What are differences between <code>ID</code>, <code>class</code> and <code>tag name</code> selectors</li>
